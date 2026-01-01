@@ -60,7 +60,7 @@ python manage.py runserver
 ===ToDo Dashboard: http://127.0.0.1:8000/todo/
 ===Admin Panel: http://127.0.0.1:8000/admin/
 ```
-##🧭 Usage
+## 🧭 Usage
 
 1.Register a new account using the signup page.
 2.Log in with your credentials.
@@ -76,7 +76,7 @@ python manage.py runserver
 
 <img width="1314" height="849" alt="Screenshot 2026-01-01 221314" src="https://github.com/user-attachments/assets/8071b87c-fd67-47bc-bc62-7b9b9dc2013a" />
 
-##🚀 Future Improvements
+## 🚀 Future Improvements
 
 1.Add requirements.txt for dependency management
 2.Implement task completion status (completed / pending)
@@ -85,14 +85,15 @@ python manage.py runserver
 5.Add password reset and email verification
 6.Write automated tests
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome.
 Please open an issue to discuss changes before submitting a pull request.
 
-📄 License
+## 📄 License
 This project is open source.
 
-👤 Maintainer
+## 👤 Maintainer
 Akhil
 GitHub: @Akki-06 : https://github.com/Akki-06
+
 
