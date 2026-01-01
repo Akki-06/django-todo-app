@@ -62,11 +62,11 @@ python manage.py runserver
 ```
 ## 🧭 Usage
 
-1.Register a new account using the signup page.
-2.Log in with your credentials.
-3.Add tasks from the dashboard.
-4.Edit or delete tasks as needed.
-5.Each user can only see and manage their own tasks.
+1. Register a new account using the signup page.
+2. Log in with your credentials.
+3. Add tasks from the dashboard.
+4. Edit or delete tasks as needed.
+5. Each user can only see and manage their own tasks.
 
 📸 Screenshot
 
@@ -78,12 +78,12 @@ python manage.py runserver
 
 ## 🚀 Future Improvements
 
-1.Add requirements.txt for dependency management
-2.Implement task completion status (completed / pending)
-3.Add pagination and search functionality
-4.Improve mobile responsiveness
-5.Add password reset and email verification
-6.Write automated tests
+1. Add `requirements.txt` for dependency management
+2. Implement task completion status (completed / pending)
+3. Add pagination and search functionality
+4. Improve mobile responsiveness
+5. Add password reset and email verification
+6. Write automated tests
 
 ## 🤝 Contributing
 Contributions are welcome.
@@ -95,5 +95,6 @@ This project is open source.
 ## 👤 Maintainer
 Akhil
 GitHub: @Akki-06 : https://github.com/Akki-06
+
 
 
