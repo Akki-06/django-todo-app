@@ -5,6 +5,17 @@ The app includes user authentication and allows each user to manage their own pe
 
 ---
 
+## 🌍 Live Demo
+
+The application is deployed and accessible online:
+
+🔗 **Live URL:**  
+https://todo-app-mfk0.onrender.com/
+
+> ⚠️ Note: The app may take a few seconds to load on first access due to free hosting cold starts.
+
+---
+
 ## ✨ Features
 
 - User authentication (Signup / Login / Logout)
