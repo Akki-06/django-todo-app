@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    />
+    <script
+      src="https://kit.fontawesome.com/cb792c0850.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="signup-login">
+      <div>
+
+        <h1>Hello {{ user.username }}</h1>
+
+        <div class="signup-box scr">
+          <div class="heading">Get Things Done</div>
+
+          <div class="anca">
+            <form method="post" action="{% url 'signout' %}">
+              {% csrf_token %}
+              <button
+                type="submit"
+                class="sign"
+                style="background:none;border:none;padding:10px;color:white;font-size:24px;"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </form>
+          </div>
+
+          <form method="post">
+            {% csrf_token %}
+            <input
+              type="text"
+              class="inp"
+              name="title"
+              required
+              placeholder="Add Today's Task"
+            />
+            <input
+              class="submit-button"
+              type="submit"
+              value="Add Task"
+            />
+          </form>
+          <div class="task-divider"></div>
+
+
+          {% for todo in res %}
+            <!-- ✅ CLASS NAMES FIXED HERE -->
+            <div class="Todo todo-item" onclick="changeColor(this)">
+              <h5>{{ forloop.counter }}</h5>
+
+              <p class="todo-text">
+                {{ todo.title }}
+              </p>
+
+              <div class="todo-actions">
+                <a href="{% url 'edit_todo' todo.srno %}" onclick="event.stopPropagation();">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </a>
+                <a href="{% url 'delete_todo' todo.srno %}" onclick="event.stopPropagation();">
+                  <i class="fa-solid fa-trash"></i>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ FIXED JS PATH -->
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

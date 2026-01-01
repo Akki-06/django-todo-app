@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Font Awesome 5 Brands:wght@400&display=swap" />
+    <script src="https://kit.fontawesome.com/cb792c0850.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="signup-login">
+      <div>
+        <div>
+          <h1>Hello {{ user.username }}</h1>
+        </div>
+
+        <div class="signup-box scr">
+
+          <div class="heading">Edit Task</div>
+
+          <div class="anca">
+            <form method="post" action="{% url 'signout' %}">
+              {% csrf_token %}
+              <button type="submit" class="sign"
+                style="background:none;border:none;padding:10px;color:white;font-size:24px;">
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- ✅ FIXED EDIT FORM -->
+          <form method="post" action="">
+            {% csrf_token %}
+            <input type="text" class="inp" name="title" required value="{{ obj.title }}">
+            <input class="submit-button" type="submit" value="Update Task">
+          </form>
+
+          <a href="{% url 'todo' %}" class="anc">Cancel</a>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
