@@ -180,7 +180,7 @@ a:hover {
 }
 
 /* =====================
-   TODO CARD (COMPLETED)
+   TODO CARD
 ===================== */
 .Todo.todo-item.completed {
   background: linear-gradient(135deg, #0f766e, #2dd4bf);
