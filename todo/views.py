@@ -10,7 +10,7 @@ def signup(request):
         fnm = request.POST.get('fnm')
         emailid = request.POST.get('emailid')
         pwd = request.POST.get('pwd')
-        
+
         my_user = User.objects.create_user(fnm, emailid, pwd)
         return redirect('/login')
 

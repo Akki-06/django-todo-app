@@ -1,15 +1,6 @@
 /* =====================
-   GLOBAL RESET
+   GLOBAL BACKGROUND
 ===================== */
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -19,15 +10,14 @@ body {
 }
 
 /* =====================
-   MAIN LAYOUT
+   CENTER LAYOUT
 ===================== */
 .signup-login {
   width: 100%;
-  min-height: 100svh;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 16px;
+  align-items: center;
 }
 
 /* =====================
@@ -35,8 +25,6 @@ body {
 ===================== */
 .signup-box,
 .signup-box1 {
-  width: 560px;
-  max-width: 100%;
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.10),
@@ -44,7 +32,8 @@ body {
   );
   backdrop-filter: blur(10px);
   border-radius: 24px;
-  padding: 24px;
+  padding: 30px;
+  width: 560px;
   box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.6),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -57,13 +46,13 @@ body {
   font-size: 36px;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 25px;
+  color: #eaeaea;
 }
 
 h1 {
   font-size: 22px;
   color: #a8dadc;
-  margin-bottom: 14px;
 }
 
 /* =====================
@@ -72,7 +61,7 @@ h1 {
 .inp {
   width: 100%;
   height: 52px;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
   padding-left: 18px;
   border-radius: 12px;
   border: none;
@@ -80,6 +69,7 @@ h1 {
   background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
   outline: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
 .inp::placeholder {
@@ -87,18 +77,25 @@ h1 {
 }
 
 /* =====================
-   BUTTON
+   PRIMARY BUTTON
 ===================== */
 .submit-button {
   width: 100%;
   height: 52px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   border-radius: 12px;
   border: none;
   font-size: 18px;
+  font-weight: 500;
   cursor: pointer;
   background: linear-gradient(135deg, #ffd166, #fcbf49);
   color: #1c2541;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(252, 191, 73, 0.6);
 }
 
 /* =====================
@@ -107,80 +104,118 @@ h1 {
 a {
   text-decoration: none;
   color: #80ffdb;
+  transition: color 0.2s ease;
 }
 
 a:hover {
   color: #ffd166;
 }
-
 .auth-switch {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;            
+  margin-top: 10px;
   font-size: 16px;
+  color: #eaeaea;
 }
 
+.auth-switch a {
+  color: #80ffdb;      
+  font-weight: 500;
+}
+
+.auth-switch a:hover {
+  color: #ffd166;
+}
+
+
 /* =====================
-   SCROLL AREA
+   TODO LIST
 ===================== */
 .scr {
-  max-height: calc(100svh - 120px);
+  max-height: 420px;
   overflow-y: auto;
 }
+
+.scr::-webkit-scrollbar {
+  width: 0;
+}
+.task-divider {
+  margin: 25px 0 20px 0;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+}
+
 
 /* =====================
    TODO CARD 
 ===================== */
 .Todo.todo-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-  padding: 16px;
+  align-items: center;
+  padding: 14px 16px;
   margin-bottom: 14px;
-  border-radius: 16px;
+  border-radius: 14px;
   background: linear-gradient(135deg, #3a506b, #5bc0be);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition:
+    background 0.4s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
 }
 
-/* SR NO */
-.todo-index {
-  font-size: 15px;
-  opacity: 0.7;
-  min-width: 20px;
-}
-
-/* TITLE */
-.todo-text {
-  flex: 1;
-  font-size: 18px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* ICONS */
-.todo-actions {
-  display: flex;
-  gap: 14px;
-  flex-shrink: 0;
-}
-
-.todo-actions a {
-  font-size: 20px;
-  color: #ffffff;
+.Todo.todo-item:hover {
+  transform: scale(1.02);
 }
 
 /* =====================
-   COMPLETED
+   TODO CARD (COMPLETED)
 ===================== */
 .Todo.todo-item.completed {
   background: linear-gradient(135deg, #0f766e, #2dd4bf);
+  box-shadow:
+    0 10px 35px rgba(45, 212, 191, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* =====================
+   TODO TEXT
+===================== */
+.todo-text {
+  flex: 1;
+  margin: 0 15px;
+  font-size: 18px;
 }
 
 .Todo.todo-item.completed .todo-text {
   text-decoration: line-through;
-  opacity: 0.7;
+  opacity: 0.75;
+}
+
+/* =====================
+   ICONS
+===================== */
+.todo-actions a {
+  font-size: 20px;
+  margin-left: 12px;
+  color: #ffffff;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.todo-actions a:hover {
+  transform: scale(1.2);
+  color: #ffd166;
 }
 
 /* =====================
@@ -190,26 +225,10 @@ a:hover {
   background: rgba(255, 99, 99, 0.15);
   color: #ffb4b4;
   border: 1px solid rgba(255, 99, 99, 0.4);
-  padding: 10px;
+  padding: 10px 14px;
   border-radius: 10px;
-  margin-bottom: 14px;
+  margin: 10px 0 15px 0;
+  font-size: 15px;
   text-align: center;
 }
 
-/* =====================
-      MOBILE 
-===================== */
-@media (max-width: 768px) {
-
-  .heading {
-    font-size: 26px;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  .Todo.todo-item {
-    flex-direction: row;
-  }
-}
