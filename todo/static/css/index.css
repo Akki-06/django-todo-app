@@ -1,8 +1,6 @@
 /* =====================
-   GLOBAL BACKGROUND
+   GLOBAL RESET & BACKGROUND
 ===================== */
-
-
 * {
   box-sizing: border-box;
 }
@@ -25,10 +23,11 @@ body {
 ===================== */
 .signup-login {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 24px;
 }
 
 /* =====================
@@ -36,15 +35,18 @@ body {
 ===================== */
 .signup-box,
 .signup-box1 {
+  width: 560px;
+  max-width: 100%;
+  padding: 30px;
+  border-radius: 24px;
+
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.10),
     rgba(255, 255, 255, 0.04)
   );
+
   backdrop-filter: blur(10px);
-  border-radius: 24px;
-  padding: 30px;
-  width: 560px;
   box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.6),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -53,17 +55,17 @@ body {
 /* =====================
    HEADINGS
 ===================== */
+h1 {
+  font-size: 22px;
+  color: #a8dadc;
+  margin-bottom: 14px;
+}
+
 .heading {
   font-size: 36px;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 25px;
-  color: #eaeaea;
-}
-
-h1 {
-  font-size: 22px;
-  color: #a8dadc;
+  margin-bottom: 22px;
 }
 
 /* =====================
@@ -76,10 +78,12 @@ h1 {
   padding-left: 18px;
   border-radius: 12px;
   border: none;
-  font-size: 18px;
+  font-size: 17px;
+
   background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
   outline: none;
+
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
@@ -93,14 +97,15 @@ h1 {
 .submit-button {
   width: 100%;
   height: 52px;
-  margin-bottom: 10px;
   border-radius: 12px;
   border: none;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
+
   background: linear-gradient(135deg, #ffd166, #fcbf49);
   color: #1c2541;
+
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
@@ -110,29 +115,18 @@ h1 {
 }
 
 /* =====================
-   LINKS
+   AUTH SWITCH
 ===================== */
-a {
-  text-decoration: none;
-  color: #80ffdb;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: #ffd166;
-}
 .auth-switch {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10px;            
-  margin-top: 10px;
+  gap: 8px;
+  margin-top: 12px;
   font-size: 16px;
-  color: #eaeaea;
 }
 
 .auth-switch a {
-  color: #80ffdb;      
+  color: #80ffdb;
   font-weight: 500;
 }
 
@@ -140,9 +134,22 @@ a:hover {
   color: #ffd166;
 }
 
+/* =====================
+   DIVIDER
+===================== */
+.task-divider {
+  margin: 24px 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+}
 
 /* =====================
-   TODO LIST
+   SCROLL AREA
 ===================== */
 .scr {
   max-height: 420px;
@@ -152,81 +159,76 @@ a:hover {
 .scr::-webkit-scrollbar {
   width: 0;
 }
-.task-divider {
-  margin: 25px 0 20px 0;
-  height: 1px;
-  width: 100%;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-}
-
 
 /* =====================
-   TODO CARD (PENDING)
+   TODO CARD (BASE)
 ===================== */
 .Todo.todo-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 14px 16px;
+  justify-content: space-between;
+
+  padding: 14px 18px;
   margin-bottom: 14px;
-  border-radius: 14px;
+
+  border-radius: 16px;
   background: linear-gradient(135deg, #3a506b, #5bc0be);
+
   box-shadow:
     0 8px 25px rgba(0, 0, 0, 0.45),
     inset 0 0 0 1px rgba(255, 255, 255, 0.15);
-  cursor: pointer;
-  transition:
-    background 0.4s ease,
-    transform 0.2s ease,
-    box-shadow 0.3s ease;
+
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .Todo.todo-item:hover {
-  transform: scale(1.02);
-}
-
-/* =====================
-   TODO CARD (COMPLETED)
-===================== */
-.Todo.todo-item.completed {
-  background: linear-gradient(135deg, #0f766e, #2dd4bf);
-  box-shadow:
-    0 10px 35px rgba(45, 212, 191, 0.5),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transform: scale(1.015);
 }
 
 /* =====================
    TODO TEXT
 ===================== */
-.todo-text {
-  flex: 1;
-  margin: 0 15px;
-  font-size: 18px;
+.Todo h5 {
+  font-size: 13px;
+  opacity: 0.7;
+  margin: 0;
 }
 
-.Todo.todo-item.completed .todo-text {
-  text-decoration: line-through;
-  opacity: 0.75;
+.todo-text {
+  flex: 1;
+  margin: 0 14px;
+  font-size: 18px;
+  text-align: left;
 }
 
 /* =====================
-   ICONS
+   TODO ACTIONS
 ===================== */
+.todo-actions {
+  display: flex;
+  gap: 14px;
+}
+
 .todo-actions a {
   font-size: 20px;
-  margin-left: 12px;
   color: #ffffff;
-  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .todo-actions a:hover {
   transform: scale(1.2);
   color: #ffd166;
+}
+
+/* =====================
+   COMPLETED STATE
+===================== */
+.Todo.todo-item.completed {
+  background: linear-gradient(135deg, #0f766e, #2dd4bf);
+}
+
+.Todo.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  opacity: 0.75;
 }
 
 /* =====================
@@ -238,77 +240,41 @@ a:hover {
   border: 1px solid rgba(255, 99, 99, 0.4);
   padding: 10px 14px;
   border-radius: 10px;
-  margin: 10px 0 15px 0;
-  font-size: 15px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
-
-
 /* =====================
-   Mobile responsiveness
+   MOBILE RESPONSIVENESS
 ===================== */
-
 @media (max-width: 768px) {
 
   .signup-login {
-    padding: 16px;
     align-items: flex-start;
+    padding-top: 20px;
   }
 
   .signup-box,
   .signup-box1 {
-    width: 100%;
-    max-width: 100%;
-    padding: 16px;
-    box-sizing: border-box;
-  }
-
-  .inp,
-  .submit-button {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  h1 {
-    font-size: 22px;
-    margin-bottom: 12px;
+    padding: 18px;
   }
 
   .heading {
     font-size: 26px;
-    margin-bottom: 16px;
   }
 
-  .Todo {
-    width: 100%;
-    padding: 14px;
-    box-sizing: border-box;
+  .Todo.todo-item {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
   }
 
-  .Todo h5 {
-    font-size: 14px;
-    opacity: 0.7;
-  }
-
-  .Todo p {
-    font-size: 18px;
-    text-align: left;
-  }
-
-  .Todo div {
+  .todo-actions {
     align-self: flex-end;
-    display: flex;
-    gap: 16px;
   }
 
-  .anca {
-    position: absolute;
-    top: 12px;
-    right: 12px;
+  .todo-text {
+    font-size: 17px;
+    margin: 0;
   }
 }
