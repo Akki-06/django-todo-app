@@ -232,3 +232,69 @@ a:hover {
   text-align: center;
 }
 
+
+
+/* =====================
+   Mobile responsiveness
+===================== */
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  .signup-login {
+    padding: 16px;
+    align-items: flex-start;
+  }
+
+  .signup-box,
+  .signup-box1 {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .heading {
+    font-size: 26px;
+    margin-top: 10px;
+  }
+
+  .inp,
+  .submit-button {
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .Todo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  .Todo div {
+    align-self: flex-end;
+  }
+
+  .anca {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  .anc {
+    margin-left: 0;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
